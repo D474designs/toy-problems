@@ -38,8 +38,37 @@
 var allAnagrams = function(string) {
   // Your code here.
   /* START SOLUTION */
-var splitArray = string.split("");
-var randomChar = splitArray[Math.floor(Math.random() * 3)];
-return randomChar;
+  var splitArray = string.split("");
+  var randomChar = splitArray[Math.floor(Math.random() * string.length)];
+    for (var i = 0; i < 21; i++) {
+      return randomChar;
+    }
   /* END SOLUTION */
 };
+
+// allAnagrams = function(string) {
+//   var anagrams = {};
+//   var generator = function(test, options) {
+//     if (test.length === string.length) {
+//       anagrams[test] = true
+//     }
+//     for (var i = 0; i < options.length; i++) {
+//       generator(test + options[i],
+//       options.slice(0, i) + options.slice(i + 1))
+//     }
+//   }
+//     generator('', string);
+//     return Object.keys(anagrams);s
+// };
+
+// var allAngrams = function(string) {
+//   if (string.length === 0) { return ['']; }
+//
+//   var result = {};
+//   string.split('').forEach(function(letter, i) {
+//     allAnagrams(remainingLetters).forEach(function(anagram) {
+//       result[letter + anagram] = true;
+//     });
+//   });
+//   return Object.keys(result);
+// };

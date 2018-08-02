@@ -29,6 +29,41 @@ var DIGIT_VALUES = {
 var translateRomanNumeral = function(romanNumeral) {
 // TODO: Implement me!
 /* START SOLUTION */
-  
+  if (!DIGIT_VALUES.romanNumeral) {
+    return 'Value is not Defined';
+  } else { return DIGIT_VALUES['romanNumeral'];
   /* END SOLUTION */
+    }
 };
+translateRomanNumeral(D);
+
+// var DIGIT_VALUES = {
+//  I: 1,
+//  V: 5,
+//  X: 10,
+//  L: 50,
+//  C: 100,
+//  D: 500,
+//  M: 1000
+// };
+//
+// var translateRomanNumeral = function(romanNumeral) {
+// // TODO: Implement me!
+// /* START SOLUTION */
+// var result = 0;
+//
+// var letters = romanNumeral.split('');
+// for (var i = 0; i < letters.length; i += 1) {
+//  var key = letters[i];
+//  var next = letters[i + 1];
+//
+//  if (DIGIT_VALUES[key] < DIGIT_VALUES[next]) {
+//    result -= DIGIT_VALUES[key];
+//  } else {
+//    result += DIGIT_VALUES[key];
+//  }
+// }
+// return result;
+//
+//  /* END SOLUTION */
+// };
