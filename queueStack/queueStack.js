@@ -9,7 +9,7 @@
   */
 var Stack = function() {
   /* START SOLUTION */
-  
+
   /* END SOLUTION */
 
   // add an item to the top of the stack
@@ -45,7 +45,6 @@ var Queue = function() {
   // called to add an item to the `queue`
   this.enqueue = function() {
     /* START SOLUTION */
-    inbox.push.apply(inbox, arguments);
     /* END SOLUTION */
     // TODO: implement `enqueue`
   };
@@ -53,12 +52,7 @@ var Queue = function() {
   // called to remove an item from the `queue`
   this.dequeue = function() {
     /* START SOLUTION */
-    if (outbox.size() === 0) {
-      while (inbox.size() !== 0) {
-        outbox.push(inbox.pop());
-      }
-    }
-    return outbox.pop();
+
     /* END SOLUTION */
     // TODO: implement `dequeue`
   };
@@ -66,7 +60,7 @@ var Queue = function() {
   // should return the number of items in the queue
   this.size = function() {
     /* START SOLUTION */
-    return inbox.size() + outbox.size();
+    
     /* END SOLUTION */
     // TODO: implement `size`
   };
