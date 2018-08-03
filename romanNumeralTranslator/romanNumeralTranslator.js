@@ -29,13 +29,29 @@ var DIGIT_VALUES = {
 var translateRomanNumeral = function(romanNumeral) {
 // TODO: Implement me!
 /* START SOLUTION */
-  if (!DIGIT_VALUES.romanNumeral) {
-    return 'Value is not Defined';
-  } else { return DIGIT_VALUES['romanNumeral'];
-  /* END SOLUTION */
+//   if (!DIGIT_VALUES.romanNumeral) {
+//     return 'Value is not Defined';
+//   } else { return DIGIT_VALUES['romanNumeral'];
+//   /* END SOLUTION */
+//     }
+// };
+// translateRomanNumeral(D);
+
+  var total = 0;
+  for (var i = 0; i < romanNumeral.length; i++) {
+    var currentValue = DIGIT_VALUES[romanNumeral.charAt(i)];
+    var nextValue = DIGIT_VALUES[romanNumeral.charAt(i + 1)];
+
+    if (nextValue && currentValue < nextValue) {
+      total -= currentValue;
+    } else {
+      total += currentValue;
     }
+  }
+  return total;
 };
-translateRomanNumeral(D);
+
+translateRomanNumeral('XX');
 
 // var DIGIT_VALUES = {
 //  I: 1,

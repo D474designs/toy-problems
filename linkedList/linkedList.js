@@ -22,6 +22,10 @@
 var LinkedList = function() {
   //fill me in!
   /* START SOLUTION */
+  var list = {};
+
+  this.tail = null;
+  this.head = null;
   /* END SOLUTION */
 };
 
@@ -29,20 +33,48 @@ var LinkedList = function() {
 
 LinkedList.prototype.addToTail = function(/*START SOLUTION*//*END SOLUTION*/) {
   /* START SOLUTION */
+  if (this.head === null) {
+    this.head = node;
+    this.tail = node;
+  } else {
+    this.tail.next = node;
+    this.tail = node;
+  }
   /* END SOLUTION */
 };
 
 LinkedList.prototype.removeHead = function() {
   /* START SOLUTION */
+  list.removeHead = function() {
+    var babyWalrus = this.head.value;
+    this.head = this.head.next;
+    return babyWalrus;
   /* END SOLUTION */
 };
 
 LinkedList.prototype.contains = function(/*START SOLUTION*//*END SOLUTION*/) {
   /* START SOLUTION */
+  var currentHead = this.head;
+  while (currentHead) {
+    if (target === currentHead.value) {
+      return true;
+    } else {
+      currentHead = currentHead.next;
+    }
+  }
+  return false;
   /* END SOLUTION */
 };
 
-LinkedList.prototype.makeNode = function(/*START SOLUTION*//*END SOLUTION*/) {
+return list;
+
+LinkedList.prototype.makeNode = function(/*START SOLUTION*/value/*END SOLUTION*/) {
   /* START SOLUTION */
+  var node = {};
+
+  node.value = value;
+  node.next = null;
+
+  return node;
   /* END SOLUTION */
 };

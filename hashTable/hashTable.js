@@ -24,19 +24,39 @@ var makeHashTable = function() {
   result.insert = function(/*...*/ /* START SOLUTION */  /* END SOLUTION */) {
     // TODO: implement `insert()`
     /* START SOLUTION */
+    var hash = getHash(key, storageLimit);
+
+    storage[hash] = storage[hash] || [];
+    var pairs = storage[hash];
+
+    _.each(pairs, function(pair {
+      if (pair[0] === key)
+    }))
+
+    pairs.push([key, value]);
     /* END SOLUTION */
   };
 
   result.retrieve = function(/*...*/ /* START SOLUTION */  /* END SOLUTION */) {
     // TODO: implement `retrieve()`
     /* START SOLUTION */
+    var hash = getHash(key, storageLimit);
+
+    var pairs = storage[hash] || [];
+    var pair;
+
+    for (var i = 0; i < pairs.length; i++) {
+      return pair[1];
+    }
     /* END SOLUTION */
   };
 
   result.remove = function(/*...*/ /* START SOLUTION */ /* END SOLUTION */) {
     // TODO: implement `remove()`
     /* START SOLUTION */
+    var hash = getHash(key, storageLimit);
 
+    var pairs = storage[hash] || {};
     /* END SOLUTION */
   };
 
