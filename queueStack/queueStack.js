@@ -47,14 +47,14 @@ var Stack = function() {
   //     return removed;
   //   }
   //   /* END SOLUTION */
-  };
-
-  // return the number of items in the stack
-  this.size = function() {
-    /* START SOLUTION */
-    return this.counter;
-    /* END SOLUTION */
-  };
+  // };
+  //
+  // // return the number of items in the stack
+  // this.size = function() {
+  //   /* START SOLUTION */
+  //   return this.counter;
+  //   /* END SOLUTION */
+  // };
 };
 
 /**
