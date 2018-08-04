@@ -1,3 +1,78 @@
+// var getIndexBelowMaxForKey = function(str, max) {
+//  var hash = 0;
+//  for (var i = 0; i < str.length; i++) {
+//    hash = (hash << 5) + hash + str.charCodeAt(i);
+//    hash = hash & hash; // Convert to 32bit integer
+//    hash = Math.abs(hash);
+//  }
+//  return hash % max;
+// };
+//
+// var makeHashTable = function() {
+//  var result = {};
+//  var storage = [];
+//  var storageLimit = 1000;
+//
+//
+//  result.insert = function(/*...*/ /* START SOLUTION */ key, value /* END SOLUTION */) {
+//    // TODO: implement `insert()`
+//    /* START SOLUTION */
+//
+//    var index = getIndexBelowMaxForKey(key, storageLimit);
+//    storage[index] = storage[index] || [];
+//    var pairs = storage[index];
+//    var pair;
+//    var replaced = false;
+//    for (var i = 0; i < pairs.length; i++) {
+//      pair = pairs[i];
+//      if (pair[0] === key) {
+//        pair[1] = value;
+//        replaced = true;
+//      }
+//    }
+//
+//    if (!replaced) {
+//      pairs.push([key, value]);
+//    }
+//    /* END SOLUTION */
+//  };
+//
+//  result.retrieve = function(/*...*/ /* START SOLUTION */ key /* END SOLUTION */) {
+//    // TODO: implement `retrieve()`
+//    /* START SOLUTION */
+//    var index = getIndexBelowMaxForKey(key, storageLimit);
+//    var pairs = storage[index];
+//    if (!pairs) { return; }
+//    var pair;
+//    for (var i = 0; i < pairs.length; i++) {
+//      pair = pairs[i];
+//      if (pair && pair[0] === key) {
+//        return pair[1];
+//      }
+//    }
+//    /* END SOLUTION */
+//  };
+//
+//  result.remove = function(/*...*/ /* START SOLUTION */ key /* END SOLUTION */) {
+//    // TODO: implement `remove()`
+//    /* START SOLUTION */
+//    var index = getIndexBelowMaxForKey(key, storageLimit);
+//    var pairs = storage[index];
+//    var pair;
+//    for (var i = 0; i < pairs.length; i++) {
+//      pair = pairs[i];
+//      if (pair[0] === key) {
+//        var value = pair[1];
+//        delete pairs[i];
+//        return value;
+//      }
+//    }
+//    /* END SOLUTION */
+//  };
+//
+//  return result;
+// };
+
 /**
  * Create a hash table with `insert()`, `retrieve()`, and `remove()` methods.
  * The hashtable does not need to resize but it should still handle collisions.
@@ -21,7 +96,7 @@ var makeHashTable = function() {
   var storage = [];
   var storageLimit = 1000;
 
-  result.insert = function(/*...*/ /* START SOLUTION */  /* END SOLUTION */) {
+  result.insert = function(/*...*/ /* START SOLUTION */ key, value /* END SOLUTION */) {
     // TODO: implement `insert()`
     /* START SOLUTION */
     var hash = getHash(key, storageLimit);
@@ -29,15 +104,19 @@ var makeHashTable = function() {
     storage[hash] = storage[hash] || [];
     var pairs = storage[hash];
 
-    _.each(pairs, function(pair {
-      if (pair[0] === key)
-    }))
-
-    pairs.push([key, value]);
+    _.each(pairs, function(pair) {
+      if (pair[0] === key) {
+        pair[1] = value;
+        replaced = true;
+      }
+    });
+    if (!replaced) {
+      pairs.push([key, value]);
     /* END SOLUTION */
+    }
   };
 
-  result.retrieve = function(/*...*/ /* START SOLUTION */  /* END SOLUTION */) {
+  result.retrieve = function(/*...*/ /* START SOLUTION */ key /* END SOLUTION */) {
     // TODO: implement `retrieve()`
     /* START SOLUTION */
     var hash = getHash(key, storageLimit);
@@ -46,17 +125,30 @@ var makeHashTable = function() {
     var pair;
 
     for (var i = 0; i < pairs.length; i++) {
-      return pair[1];
+      pair = pairs[i];
+
+      if (pair[0] === key) {
+        return pair[1];
+      }
     }
     /* END SOLUTION */
   };
 
-  result.remove = function(/*...*/ /* START SOLUTION */ /* END SOLUTION */) {
+  result.remove = function(/*...*/ /* START SOLUTION */ key /* END SOLUTION */) {
     // TODO: implement `remove()`
     /* START SOLUTION */
     var hash = getHash(key, storageLimit);
 
     var pairs = storage[hash] || {};
+    var pair;
+
+    for (var i = 0; i < pairs.legth; i++) {
+      pair = pairs[i];
+      if (pair[0] === key) {
+        var removedPair = pairs.splice(i, 1);
+        return removedPair[1];
+      }
+    }
     /* END SOLUTION */
   };
 
