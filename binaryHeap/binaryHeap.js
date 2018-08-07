@@ -69,7 +69,6 @@
 
 /* START SOLUTION */
 
-/* ELSE
 function BinaryHeap () {
   this._heap = [];
   // this compare function will result in a minHeap, use it to make comparisons between nodes in your solution
@@ -82,10 +81,9 @@ BinaryHeap.prototype.getRoot = function () {
 }
 
 BinaryHeap.prototype.insert = function (value) {
-  // TODO: Your code here
+  // TODO: compare value to tree nodes to ascertain correct position
 }
 
 BinaryHeap.prototype.removeRoot = function () {
-  // TODO: Your code here
+  // TODO: switch root, and final node positions, and proceed to compare final node to tree nodes in order to correctly place the prior root node
 }
-END SOLUTION */
