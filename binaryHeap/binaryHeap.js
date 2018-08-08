@@ -69,45 +69,102 @@
 
 /* START SOLUTION */
 
-function BinaryHeap () {
-  this._heap = [];
-  // this compare function will result in a minHeap, use it to make comparisons between nodes in your solution
+var BinaryHeap = function () {
+ this._heap = [];
+ this._compare = function (i, j) { return i < j; };
+};
 
-  // extra credit: add selection parameter
-  // if min heap paraameter is selected run default coded
-  // if max heap parameter is selected run code setting root node as largest values
-  // if binary heap parameter is selected do not order node values
-  this._compare = function (i, j) { return i < j };
-}
+BinaryHeap.prototype._getLesserChildIndex = function (parentIndex) {
+ var childIndices = [parentIndex * 2 + 1, parentIndex * 2 + 2].filter(function (index) {
+   return index < this._heap.length;
+ }, this);
+ // compare children nodes to get the index of the lesser of them
+ if (this._compare(this._heap[childIndices[0]], this._heap[childIndices[1]])) {
+   return childIndices[0];
+ } else {
+   return childIndices[1];
+ }
+};
 
-// This function works just fine and shouldn't be modified
-BinaryHeap.prototype.getRoot = function () {
-  return this._heap[0];
-}
+BinaryHeap.prototype._swap = function (index, parentIndex) {
+ var temp = this._heap[index];
+ this._heap[index] = this._heap[parentIndex];
+ this._heap[parentIndex] = temp;
+};
 
-BinaryHeap.prototype.insert = function (value) {
-  // TODO: compare value to tree nodes to ascertain correct position
-  // iterate through the tree nodes comparing them to the insert value
-  // use recursion
-  for (var i in this._heap) {
-    // use _compare to correctly place nodes
-    this._compare(j, value) {
-      if (_compare === true) {
-        // if compare equals true place as child and continue loop
-      }
-    }
-  }
-  // place value to correct node position
-  this._heap.push(value)
-}
-
-// create helper function to swap node values
-
-// extra extra credit: iterate through array
-// use compare via recursion to place nodes into BinaryHeap
-// use helper function to swap node values when necessary
-// recurse getRoot, and push to sortedArray in order to create a sorted array
+BinaryHeap.prototype.insert = function (node) {
+ // add node to end of heap
+ this._heap.push(node);
+ // locate node’s parent
+ var index = this._heap.length - 1;
+ var parentIndex = Math.floor( (index - 1) / 2 );
+ // while node has parent and is less than parent
+ while ( index > 0 && ( this._compare(this._heap[index], this._heap[parentIndex]) ) ) {
+   // swap node and parent
+   this._swap(index, parentIndex, this);
+   index = parentIndex;
+   parentIndex = Math.floor( (index - 1) / 2);
+ }
+};
 
 BinaryHeap.prototype.removeRoot = function () {
-  // TODO: switch root, and final node positions, and proceed to compare final node to tree nodes in order to correctly place the prior root node
-}
+ // swap root node with last node
+ this._swap(this._heap.length - 1, 0, this);
+ // remove last node and store it to be returned later
+ var originalRoot = this._heap.pop();
+ var temporaryRootIndex = 0;
+ // compare children nodes to get the index of the lesser of them
+ var lesserChildIndex = this._getLesserChildIndex(temporaryRootIndex);
+ // while there are children nodes and the lesser of them is less than the new root
+ while ( lesserChildIndex && this._compare(this._heap[lesserChildIndex], this._heap[temporaryRootIndex]) ) {
+   // swap the root node with the lesser of its children
+   this._swap(lesserChildIndex, temporaryRootIndex, this);
+   temporaryRootIndex = lesserChildIndex;
+   lesserChildIndex = this._getLesserChildIndex(temporaryRootIndex);
+ }
+ // return original root node we stored earlier
+ return originalRoot;
+};
+
+// function BinaryHeap () {
+//   this._heap = [];
+//   // this compare function will result in a minHeap, use it to make comparisons between nodes in your solution
+//
+//   // extra credit: add selection parameter
+//   // if min heap paraameter is selected run default coded
+//   // if max heap parameter is selected run code setting root node as largest values
+//   // if binary heap parameter is selected do not order node values
+//   this._compare = function (i, j) { return i < j };
+// }
+//
+// // This function works just fine and shouldn't be modified
+// BinaryHeap.prototype.getRoot = function () {
+//   return this._heap[0];
+// }
+//
+// BinaryHeap.prototype.insert = function (value) {
+//   // TODO: compare value to tree nodes to ascertain correct position
+//   // iterate through the tree nodes comparing them to the insert value
+//   // use recursion
+//   // for (var i in this._heap) {
+//     // use _compare to correctly place nodes
+//     this._compare(j, value) {
+//       if (_compare === true) {
+//         // if compare equals true place as child and continue loop
+//       }
+//     }
+//   // }
+//   // place value to correct node position
+//   this._heap.push(value)
+// }
+//
+// // create helper function to swap node values
+//
+// // extra extra credit: iterate through array
+// // use compare via recursion to place nodes into BinaryHeap
+// // use helper function to swap node values when necessary
+// // recurse getRoot, and push to sortedArray in order to create a sorted array
+//
+// BinaryHeap.prototype.removeRoot = function () {
+//   // TODO: switch root, and final node positions, and proceed to compare final node to tree nodes in order to correctly place the prior root node
+// }
