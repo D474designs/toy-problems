@@ -13,5 +13,9 @@
 var evenOccurrence = function(arr) {
   // Your code here.
   /* START SOLUTION */
+  // iterate through array
+  // create object with index value as key, and property
+  // iterate through object
+  // return all keys with even numbered properties
   /* END SOLUTION */
 };

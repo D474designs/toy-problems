@@ -21,7 +21,11 @@ var rockPaperScissors = function (/* START SOLUTION */rounds/* END SOLUTION */) 
   // TODO: your solution here
   /* START SOLUTION */
   // create object with numerical keys, and rock, paper, scissors properties
+
   // create conditional statements to ensure repeats are neutralized
-  // use math.Random to generate a number from 1 to 3 for extra credit
+
+  // use math.Random to generate a number from 1 to 3 to return
+  // answers for any number of rounds for extra credit
+  
   /* END SOLUTION */
 };
