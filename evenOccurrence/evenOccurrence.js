@@ -14,8 +14,22 @@ var evenOccurrence = function(arr) {
   // Your code here.
   /* START SOLUTION */
   // iterate through array
-  // create object with index value as key, and property
+  for (var key in arr) {
+      // create object with index value as key, and property
+
+  }
   // iterate through object
   // return all keys with even numbered properties
+
+  // iterate through array
+  for (var key in arr) {
+      // create object with index value as key, and property,
+      // and value of first occurrence
+        // create conditional statement to handle recurrences
+
+      // iterate through array
+        // return first ocrruence(s)
+
+  }
   /* END SOLUTION */
 };
