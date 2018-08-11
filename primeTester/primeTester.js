@@ -11,6 +11,9 @@ var primeTester = function(n) {
   }
   // TODO: return true if n is prime, false otherwise
   /* START SOLUTION */
+  if (n % 1 === 0) {
+    return true;
+  }
   /* END SOLUTION */
 };
 

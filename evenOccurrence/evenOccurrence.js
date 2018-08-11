@@ -11,25 +11,38 @@
 */
 
 var evenOccurrence = function(arr) {
-  // Your code here.
-  /* START SOLUTION */
-  // iterate through array
-  for (var key in arr) {
-      // create object with index value as key, and property
+  var hash = {};
+  var i;
 
+  for (i = 0; i < arr.length; i++;) {
+    hash[arr[i]] = !hash[arr[i]];
   }
-  // iterate through object
-  // return all keys with even numbered properties
 
-  // iterate through array
-  for (var key in arr) {
-      // create object with index value as key, and property,
-      // and value of first occurrence
-        // create conditional statement to handle recurrences
-
-      // iterate through array
-        // return first ocrruence(s)
-
+  for (i = 0; i <arr.length; i++) {
+    if (!hash[arr[i]]) {return arr[i];}
   }
-  /* END SOLUTION */
+
+  return null;
 };
+//   // Your code here.
+//   /* START SOLUTION */
+//   // iterate through array
+//   for (var key in arr) {
+//       // create object with index value as key, and property
+//
+//   }
+//   // iterate through object
+//   // return all keys with even numbered properties
+//
+//   // iterate through array
+//   for (var key in arr) {
+//       // create object with index value as key, and property,
+//       // and value of first occurrence
+//         // create conditional statement to handle recurrences
+//
+//       // iterate through array
+//         // return first ocrruence(s)
+//
+//   }
+//   /* END SOLUTION */
+// };
