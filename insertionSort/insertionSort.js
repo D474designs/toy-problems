@@ -48,7 +48,12 @@ var testingTransform = function(array) {
 var insertionSort = function(/* START SOLUTION *//*[, comparator]*//* END SOLUTION */) {
   // Your code goes here. Feel free to add helper functions if needed.
   /* START SOLUTION */
-
+  // take input and place in correct position of sorted array
+  // iterate through array
+    // compare value to array values
+    // if array value is greater than input place input at current index
+    // take value from current index and continue value comparison
+    // sort until end of array is reached
   /* EXTRA CREDIT:
   if (!comparator) { // neglect error checking for brevity
     comparator = function(a, b) {
