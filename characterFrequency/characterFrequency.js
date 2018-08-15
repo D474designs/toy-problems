@@ -38,6 +38,11 @@
 
 var characterFrequency = function(string) {
   /* START SOLUTION */
+  // break string into characters
+  // iterate through characters
+    // push character to array of array if not aleady present
+    // count characters in a string incrementing character count
+  // return array of arrays
   /* END SOLUTION */
   return result;
 };

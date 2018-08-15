@@ -45,35 +45,65 @@ var testingTransform = function(array) {
   return transform;
 };
 
-var insertionSort = function(/* START SOLUTION *//*[, comparator]*//* END SOLUTION */) {
-  // Your code goes here. Feel free to add helper functions if needed.
-  /* START SOLUTION */
-  // take input and place in correct position of sorted array
-  // iterate through array
-    // compare value to array values
-    // if array value is greater than input place input at current index
-    // take value from current index and continue value comparison
-    // sort until end of array is reached
-  /* EXTRA CREDIT:
-  if (!comparator) { // neglect error checking for brevity
-    comparator = function(a, b) {
-      // We only need to know if a is _less than_ b
-      return a.value < b.value ? -1 : 0;
-    };
-  }
+function insertion_Sort(arr)
+{
+ for (var i = 1; i < arr.length; i++)
+ {
+   if (arr[i] < arr[0])
+   {
+     //move current element to the first position
+     arr.unshift(arr.splice(i,1)[0]);
+   }
+   else if (arr[i] > arr[i-1])
+   {
+     //leave current element where it is
+     continue;
+   }
+   else {
+     //find where element should go
+     for (var j = 1; j < i; j++) {
+       if (arr[i] > arr[j-1] && arr[i] < arr[j])
+       {
+         //move element
+         arr.splice(j,0,arr.splice(i,1)[0]);
+       }
+     }
+   }
+ }
+ return arr;
+}
 
-  for (var i = 1; i < array.length; i++) {
-    var val = array[i];
-    var hole = i;
+insertion_Sort([3, 0, 2, 5, -1, 4, 1]);
 
-    while ((hole > 0 && comparator(val, array[hole - 1])) < 0) {
-      array[hole] = array[hole - 1];
-      hole -= 1;
-    }
-
-    array[hole] = val;
-  }
-   */
-  /* END SOLUTION */
-  return array;
-};
+// var insertionSort = function(/* START SOLUTION *//*[, comparator]*//* END SOLUTION */) {
+//   // Your code goes here. Feel free to add helper functions if needed.
+//   /* START SOLUTION */
+//   // take input and place in correct position of sorted array
+//   // iterate through array
+//     // compare value to array values
+//     // if array value is greater than input place input at current index
+//     // take value from current index and continue value comparison
+//     // sort until end of array is reached
+//   /* EXTRA CREDIT:
+//   if (!comparator) { // neglect error checking for brevity
+//     comparator = function(a, b) {
+//       // We only need to know if a is _less than_ b
+//       return a.value < b.value ? -1 : 0;
+//     };
+//   }
+//
+//   for (var i = 1; i < array.length; i++) {
+//     var val = array[i];
+//     var hole = i;
+//
+//     while ((hole > 0 && comparator(val, array[hole - 1])) < 0) {
+//       array[hole] = array[hole - 1];
+//       hole -= 1;
+//     }
+//
+//     array[hole] = val;
+//   }
+//    */
+//   /* END SOLUTION */
+//   return array;
+// };
