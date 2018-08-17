@@ -41,6 +41,7 @@
 var Tree = function(value) {
   this.value = value;
   this.children = [];
+  // create additional storage for search purposes
 };
 
 Tree.prototype.map = function (callback) {
@@ -48,8 +49,10 @@ Tree.prototype.map = function (callback) {
   /* START SOLUTION */
 
   // iterate through tree starting at root
+    // use conditional statement to verify additional, tree storage, nodes
   // take value and execute callback
     // create new root or new child with new value
+      // use a conditional statement to create either root or child
 
   /* END SOLUTION */
 };
@@ -60,6 +63,7 @@ Tree.prototype.mapInPlace = function (callback) {
   /* START SOLUTION */
 
   // iterate through trees
+    // use conditional statement to verify additional, tree storage, nodes
   // execute callback on values
 
   /* END SOLUTION */
