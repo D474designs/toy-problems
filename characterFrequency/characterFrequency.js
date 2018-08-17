@@ -35,14 +35,44 @@
  *
  */
 
-
-var characterFrequency = function(string) {
+ var characterFrequency = function(string) {
   /* START SOLUTION */
-  // break string into characters
-  // iterate through characters
-    // push character to array of array if not aleady present
-    // count characters in a string incrementing character count
-  // return array of arrays
+  var letter;
+  var letters;
+  var result = [];
+  var frequencies = {};
+  var i;
+
+  // letter frequencies
+  for (i = 0; i < string.length; i++) {
+    letter = string.substr(i, 1);
+    if (!frequencies[letter]) { frequencies[letter] = 0; }
+    frequencies[letter]++;
+  }
+
+  letters = Object.keys(frequencies);
+
+  for (i = 0; i < letters.length; i++) {
+    result.push([letters[i], frequencies[letters[i]]]);
+  }
+  result.sort(function(a, b) {
+    if (a[1] > b[1]) { return -1; }
+    if (a[1] < b[1]) { return 1; }
+    if (a[0] < b[0]) { return -1; }
+    if (a[0] > b[0]) { return 1; }
+    return 0;
+  });
   /* END SOLUTION */
   return result;
-};
+ };
+
+// var characterFrequency = function(string) {
+//   /* START SOLUTION */
+//   // break string into characters
+//   // iterate through characters
+//     // push character to array of array if not aleady present
+//     // count characters in a string incrementing character count
+//   // return array of arrays
+//   /* END SOLUTION */
+//   return result;
+// };

@@ -35,45 +35,86 @@
 
 // This function is to help you test, and should not be incorporated in your solution.
 // It will transform an array of numbers into an array of valid objects.
+// var testingTransform = function(array) {
+//   var transform = [];
+//
+//   for (var i = 0; i < array.length; i++) {
+//     transform.push({value: array[i], i: i});
+//   }
+//
+//   return transform;
+// };
+//
+// var insertionSort = function(array) {
+//   for (var i = 0; i = array.length; i++) {
+//     var val = array[i];
+//     var hole = i;
+//
+//     while (hole > 0 && val.value < array[hole - 1].value) {
+//       array[hole] = array[hole - 1];
+//       hole -= 1;
+//     }
+//     array[hole] = val;
+//   }
+// };
+
 var testingTransform = function(array) {
-  var transform = [];
+ var transform = [];
 
-  for (var i = 0; i < array.length; i++) {
-    transform.push({value: array[i], i: i});
-  }
+ for (var i = 0; i < array.length; i++) {
+   transform.push({value: array[i], i: i});
+ }
 
-  return transform;
+ return transform;
 };
 
-function insertion_Sort(arr)
-{
- for (var i = 1; i < arr.length; i++)
- {
-   if (arr[i] < arr[0])
-   {
-     //move current element to the first position
-     arr.unshift(arr.splice(i,1)[0]);
-   }
-   else if (arr[i] > arr[i-1])
-   {
-     //leave current element where it is
-     continue;
-   }
-   else {
-     //find where element should go
-     for (var j = 1; j < i; j++) {
-       if (arr[i] > arr[j-1] && arr[i] < arr[j])
-       {
-         //move element
-         arr.splice(j,0,arr.splice(i,1)[0]);
-       }
-     }
-   }
- }
- return arr;
-}
+var insertionSort = function(array/* START SOLUTION *//*[, comparator]*//* END SOLUTION */) {
+ // Your code goes here. Feel free to add helper functions if needed.
+ /* START SOLUTION */
 
-insertion_Sort([3, 0, 2, 5, -1, 4, 1]);
+ for (var i = 1; i < array.length; i++) {
+   var val = array[i];
+   var hole = i;
+
+   while (hole > 0 && val.value < array[hole - 1].value) {
+     array[hole] = array[hole - 1];
+     hole -= 1;
+   }
+
+   array[hole] = val;
+ }
+return array
+};
+
+// function insertion_Sort(arr)
+// {
+//  for (var i = 1; i < arr.length; i++)
+//  {
+//    if (arr[i] < arr[0])
+//    {
+//      //move current element to the first position
+//      arr.unshift(arr.splice(i,1)[0]);
+//    }
+//    else if (arr[i] > arr[i-1])
+//    {
+//      //leave current element where it is
+//      continue;
+//    }
+//    else {
+//      //find where element should go
+//      for (var j = 1; j < i; j++) {
+//        if (arr[i] > arr[j-1] && arr[i] < arr[j])
+//        {
+//          //move element
+//          arr.splice(j,0,arr.splice(i,1)[0]);
+//        }
+//      }
+//    }
+//  }
+//  return arr;
+// }
+//
+// insertion_Sort([3, 0, 2, 5, -1, 4, 1]);
 
 // var insertionSort = function(/* START SOLUTION *//*[, comparator]*//* END SOLUTION */) {
 //   // Your code goes here. Feel free to add helper functions if needed.
