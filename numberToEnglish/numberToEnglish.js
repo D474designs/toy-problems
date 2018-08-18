@@ -56,5 +56,13 @@ var numbersToPlace = {
 Number.prototype.toEnglish = function () {
   // return my value as english words
   /* START SOLUTION */
+  // take input and iterate through numbers individually
+    // use conditional statements for large number comma context
+      // parse numbers into corresponding string concatenation
+        // return string concatenation
+
+  // extra credit: parse decimals into string
+    // use conditional statements
+      // return prior + current concatenation
   /* END SOLUTION */
 };
