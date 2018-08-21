@@ -50,6 +50,7 @@ LinkedList.prototype.removeHead = function() {
     this.head = this.head.next;
     return babyWalrus;
   /* END SOLUTION */
+  }
 };
 
 LinkedList.prototype.contains = function(/*START SOLUTION*//*END SOLUTION*/) {

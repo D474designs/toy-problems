@@ -54,6 +54,28 @@ var numbersToPlace = {
 };
 
 Number.prototype.toEnglish = function () {
+
+  var number = this.valueOf();
+  var place, numberInPlace, numberLeft;
+  var decimalPart;
+  var output, restOfString, decimalString;number);
+  }
+  if (numbersToWords[number]) {
+    output = numbersToWords[number];
+  } else if (number < 100) {
+    numberInPlace = Math.floor(number / 10);
+    numberLeft = number % 10;
+    output = numbersToWords[numberInPlace * 10] + '-' + (numberLeft).toEnglish();
+  } else {
+    if (number < 1000) {
+      place = 100;
+    } else {
+      place = 1000;
+      while (place * 1000 <= number) {
+      }
+    }
+  }
+
   // return my value as english words
   /* START SOLUTION */
   // take input and iterate through numbers individually

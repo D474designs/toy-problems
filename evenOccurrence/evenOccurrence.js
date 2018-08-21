@@ -14,7 +14,7 @@ var evenOccurrence = function(arr) {
   var hash = {};
   var i;
 
-  for (i = 0; i < arr.length; i++;) {
+  for (i = 0; i < arr.length; i++) {
     hash[arr[i]] = !hash[arr[i]];
   }
 
