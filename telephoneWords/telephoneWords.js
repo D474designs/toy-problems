@@ -44,5 +44,18 @@ var phoneDigitsToLetters = {
 var telephoneWords = function(digitString) {
   // TODO: return every combination that can be spelled on a phone with these digits
   /* START SOLUTION */
+  // take in key values and break them into individual characters
+    // loop through them pushing them into an array
+      // if combination of letters already exists do not push combination again
+  // return array
   /* END SOLUTION */
 };
+
+// // **extra credit*
+// var telephoneActualWords = function(digitString) {
+//   // take in key values and break them into individual characters
+//     // loop through them pushing them into an array
+//       // if combination of letters matches line at
+//       // /usr/share/dict/words push to array
+//   // return array
+// };
