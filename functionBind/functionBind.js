@@ -26,6 +26,8 @@
 var bind = function(/*START SOLUTION*/func, context/*END SOLUTION*/) {
   // TODO: Your code here
   /* START SOLUTION */
+  // take in paramaters
+    // return arguments within function context
   /* END SOLUTION */
 };
 
@@ -59,6 +61,9 @@ Function.prototype.bind = function(/*START SOLUTION*/ context /*END SOLUTION*/) 
   /* START SOLUTION */
   var previousArgs = Array.prototype.slice.call(arguments, 1);
   var func = this;
+
+  // use arguments from the prototype chain
+    // use this with parameter
 
   return function() {
     var args = Array.prototype.slice.call(arguments);
