@@ -29,7 +29,9 @@ var coins = [1, 2, 5, 10, 20, 50, 100, 200];
 var makeChange = function(total) {
 /* START SOLUTION */
   // use coins variable to create combinations that amount to £2
+  // iterate through array and push to a new array
     // use memoization to verify that a combo has not been used before
+    // if array combination has been used before do not save to array
 /* END SOLUTION */
 };
 
