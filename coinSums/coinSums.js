@@ -24,9 +24,12 @@ makeChange(1) === 1
 makeChange(2) === 2
 */
 
+var coins = [1, 2, 5, 10, 20, 50, 100, 200];
+
 var makeChange = function(total) {
 /* START SOLUTION */
-
+  // use coins variable to create combinations that amount to £2
+    // use memoization to verify that a combo has not been used before
 /* END SOLUTION */
 };
 
