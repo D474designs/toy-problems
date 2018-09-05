@@ -24,10 +24,16 @@ var nthFibonacci = function (n) {
   // TODO: implement me!
   /* START SOLUTION */
   // fast solution
-
+  var fib = [0,1];
+  var onacci;
+  for (var i = 0; i <= n; i++) {
+    onacci = fib[i] + (fib[i+1]);
+    fib.push(onacci);
+  }
+  return fib, fib[n];
   /* END SOLUTION */
 };
-
+nthFibonacci(7);
 
 /* START SOLUTION */
 // solow, recusrive (exponential time complexity) solution
