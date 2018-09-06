@@ -41,11 +41,30 @@ var i;
 var bubbleSort = function(array) {
   // Your code here.
   /* START SOLUTION */
+  var bubble1;
+  var bubble2;
 // iterate through array
+  for (var j = 0; j <= array.length; i++) {
   // if j is more than j+1 swap index values
+    if (array[j] > array[j+1]) {
+      // bubble = array.splice(1, j);
+      // array[j+1] =
+
+    }
     // increment j
   // else do not swap index values
     // increment j
+  }
 // return sorted array
+
+// extra credit 1:
+// if array values are not swapped as many times as their are values
+// in the array, then return sorted array and stop the function
+
+// extra credit 2:
+// set lowest and greatest values in the array to variables and assign
+// them accordingly within the array, do not iterate through the 0
+// and the final array index, continue doing this incrementing the lowest
+// variable by 1, and the last index by -1, until you sort the array
   /* END SOLUTION */
 };
