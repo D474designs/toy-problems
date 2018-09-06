@@ -76,3 +76,28 @@
 
    return obj;
  };
+
+//  var mixEvents = function(obj) {
+//  // TODO: Your code here
+//  /* START SOLUTION */
+//  var events = {};
+//
+//  obj.trigger = function (event) {
+//    if (events[event]) {
+//      var args = Array.prototype.slice.call(arguments, 1);
+//      // Trigger each registered callback for this event.
+//      events[event].forEach(function (callback) {
+//        callback.apply(obj, args);
+//      });
+//    }
+//  };
+//
+//  // Register a callback to be fired on this event.
+//  obj.on = function (event, callback) {
+//    events[event] = events[event] || [];
+//    events[event].push(callback);
+//  };
+//
+//  /* END SOLUTION */
+//  return obj;
+// };

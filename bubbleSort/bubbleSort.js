@@ -41,6 +41,11 @@ var i;
 var bubbleSort = function(array) {
   // Your code here.
   /* START SOLUTION */
-
+// iterate through array
+  // if j is more than j+1 swap index values
+    // increment j
+  // else do not swap index values
+    // increment j
+// return sorted array
   /* END SOLUTION */
 };

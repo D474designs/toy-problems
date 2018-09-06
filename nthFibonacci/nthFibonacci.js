@@ -33,7 +33,6 @@ var nthFibonacci = function (n) {
   return fib, fib[n];
   /* END SOLUTION */
 };
-nthFibonacci(7);
 
 /* START SOLUTION */
 // solow, recusrive (exponential time complexity) solution
