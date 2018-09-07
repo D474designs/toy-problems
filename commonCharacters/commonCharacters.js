@@ -21,10 +21,10 @@ var commonCharacters = function(string1, string2, string3) {
   let str2;
   let str3;
   let strX;
-  let strY;
-  let strZ;
+  // let strY;
+  // let strZ;
 
-  var str0;
+  // var str0;
 
   str1 = string1.trim();
   str2 = string2.trim();
@@ -35,6 +35,13 @@ var commonCharacters = function(string1, string2, string3) {
   str1 = str1.split('');
   str2 = str2.split('');
   str3 = str3.split('');
+
+  // var fullWordList = ['1','2','3','4','5'];
+  // var wordsToRemove = ['1','2','3'];
+  // var filteredKeywords = fullWordList.filter((word) => !wordsToRemove.includes(word));
+  // console.log(filteredKeywords);
+
+  strX = str1.filter((i) => str2.includes(i) && str3.includes(i));
 
   // for (let i of str1) {
   //   for (let j of str2) {
@@ -47,8 +54,8 @@ var commonCharacters = function(string1, string2, string3) {
   //       }
   //     }
   //   }
-  
-  return str0;
+
+  return strX;
   /* END SOLUTION */
 };
 commonCharacters('Asimovxy', 'xDiymitri', 'yMuhxammed');
