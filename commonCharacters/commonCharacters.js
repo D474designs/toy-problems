@@ -20,24 +20,35 @@ var commonCharacters = function(string1, string2, string3) {
   let str1;
   let str2;
   let str3;
-  var strX;
+  let strX;
+  let strY;
+  let strZ;
+
+  var str0;
+
   str1 = string1.trim();
   str2 = string2.trim();
   str3 = string3.trim();
-  str1 = string1.toLowerCase();
-  str2 = string2.toLowerCase();
-  str3 = string3.toLowerCase();
+  str1 = str1.toLowerCase();
+  str2 = str2.toLowerCase();
+  str3 = str3.toLowerCase();
+  str1 = str1.split('');
+  str2 = str2.split('');
+  str3 = str3.split('');
 
-  for (let i of str1) {
-    for (let j of str2) {
-      for (let k of str3) {
-        if (i === j && k) {
-          strX.concat(i);
-        }
-      }
-    }
-  }
-  return strX;
+  // for (let i of str1) {
+  //   for (let j of str2) {
+  //     if (i === j) {
+  //       strX.concat(i);
+  //     }
+  //     for (let k of str3) {
+  //       // if (i === j && k) {
+  //       //   strX.concat(i);
+  //       }
+  //     }
+  //   }
+  
+  return str0;
   /* END SOLUTION */
 };
-commonCharacters('Asimov', 'Dimitri', 'Muhammed');
+commonCharacters('Asimovxy', 'xDiymitri', 'yMuhxammed');
