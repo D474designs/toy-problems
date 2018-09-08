@@ -13,5 +13,9 @@
   */
 var deepEquals = function(apple, orange) {
   /* START SOLUTION */
+  // for (prop in apple) {
+  //
+  // }
+  object.is(apple, orange);
   /* END SOLUTION */
 };
