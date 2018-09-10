@@ -19,5 +19,9 @@
 
 var powerSet = function(str) {
   /* START SOLUTION */
+  // iterate through string
+    // push first character to array
+    // if index value already exists push next index value character
+  // re-iterate through string using recursion, and index starting value +1
   /* END SOLUTION */
 };
