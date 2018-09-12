@@ -18,5 +18,6 @@
 var rotatedArraySearch = function (rotated, target) {
   // Your code here:
   /* START SOLUTION */
+  
   /* END SOLUTION */
 };
