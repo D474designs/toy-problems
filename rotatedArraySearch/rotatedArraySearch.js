@@ -18,5 +18,8 @@
 var rotatedArraySearch = function (rotated, target) {
   // Your code here:
   /* START SOLUTION */
+  // iterate through array
+    // if element exists within rotated
+      // return index value of element
   /* END SOLUTION */
 };
