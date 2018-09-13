@@ -26,6 +26,12 @@
 var balancedParens = function(input) {
   /* START SOLUTION */
   var stack = [];
+
+  var stack0 = [];
+  var curly = 0;
+  var bracket = 0;
+  var parens = 0;
+
   var pairs = {
     '{': '}',
     '[': ']',
@@ -45,6 +51,28 @@ var balancedParens = function(input) {
   }
 
   //return false if there are any unclosed brackets
+    stack0.push(chr);
+    for (var j = 0; i < stack0.length; i++) {
+      var chr0 = stack0[j];
+      if (chr0 = '{') {
+        curly++;
+      }
+      else if (chr0 = '[') {
+        bracket++;
+      }
+      else if (chr0 = '(') {
+        parens++;
+      }
+      else if (curly % 2 !=== 0 || bracket % 2 !=== 0 || parens % 2 !=== 0) {
+        return false;
+      }
+      else {
+        return true;
+      }
+    }
+    // if (pairs[chr] === '{' || '[' || '(') {
+    //   return false;
+    // }
   return stack.length === 0;
   /* END SOLUTION */
 };
@@ -64,8 +92,8 @@ var advancedSolution = function(input, rules) {
 
   // create a filter object based on the given or default rule set
   var startChars = Object.keys(rules);
-  var filterChars = startChars.reduce(function(m, i) { 
-    return m + i + rules[i]; 
+  var filterChars = startChars.reduce(function(m, i) {
+    return m + i + rules[i];
   }, '');
 
   for ( var i = 0; i < input.length; i++ ) {
