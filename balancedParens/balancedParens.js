@@ -25,6 +25,7 @@
  */
 var balancedParens = function(input) {
   /* START SOLUTION */
+
   var stack = [];
 
   var stack0 = [];
@@ -74,6 +75,7 @@ var balancedParens = function(input) {
     //   return false;
     // }
   return stack.length === 0;
+
   /* END SOLUTION */
 };
 
@@ -110,4 +112,6 @@ var advancedSolution = function(input, rules) {
 
   return stack.length === 0;
 };
+=======
+>>>>>>> 2c066c5623ea7cba0e55fd011410552b31ab304a
 /* END SOLUTION */
