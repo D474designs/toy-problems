@@ -23,61 +23,82 @@
  *
  *
  */
-var balancedParens = function(input) {
-  /* START SOLUTION */
 
-  var stack = [];
-
-  var stack0 = [];
-  var curly = 0;
-  var bracket = 0;
-  var parens = 0;
-
-  var pairs = {
-    '{': '}',
-    '[': ']',
-    '(': ')'
-  };
-
-  for (var i = 0; i < input.length; i++) {
-    var chr = input[i];
-
-    if (pairs[chr]) {
-      stack.push(chr);
-    } else if (chr === '}' || chr === ']' || chr === ')') {
-      if (pairs[stack.pop()] !== chr) {
-        return false;
-      }
-    }
-  }
-
-  //return false if there are any unclosed brackets
-    stack0.push(chr);
-    for (var j = 0; i < stack0.length; i++) {
-      var chr0 = stack0[j];
-      if (chr0 = '{') {
-        curly++;
-      }
-      else if (chr0 = '[') {
-        bracket++;
-      }
-      else if (chr0 = '(') {
-        parens++;
-      }
-      else if (curly % 2 !=== 0 || bracket % 2 !=== 0 || parens % 2 !=== 0) {
-        return false;
-      }
-      else {
-        return true;
-      }
-    }
-    // if (pairs[chr] === '{' || '[' || '(') {
-    //   return false;
-    // }
-  return stack.length === 0;
-
-  /* END SOLUTION */
+ var balancedParens = function(input) {
+ /* START SOLUTION */
+ var stack = [];
+ var pairs = {
+   '{': '}',
+   '[': ']',
+   '(': ')'
+ };  for (var i = 0; i < input.length; i++) {
+   var chr = input[i];    if (pairs[chr]) {
+     stack.push(chr);
+   } else if (chr === '}' || chr === ']' || chr === ')') {
+     if (pairs[stack.pop()] !== chr) {
+       return false;
+     }
+   }
+ }  //return false if there are any unclosed brackets
+ return stack.length === 0;
+ /* END SOLUTION */
 };
+
+// var balancedParens = function(input) {
+//   /* START SOLUTION */
+//
+//   var stack = [];
+//
+//   var stack0 = [];
+//   var curly = 0;
+//   var bracket = 0;
+//   var parens = 0;
+//
+//   var pairs = {
+//     '{': '}',
+//     '[': ']',
+//     '(': ')'
+//   };
+//
+//   for (var i = 0; i < input.length; i++) {
+//     var chr = input[i];
+//
+//     if (pairs[chr]) {
+//       stack.push(chr);
+//     } else if (chr === '}' || chr === ']' || chr === ')') {
+//       if (pairs[stack.pop()] !== chr) {
+//         return false;
+//       }
+//     }
+//   }
+//
+//   //return false if there are any unclosed brackets
+//     stack0.push(chr);
+//     for (var j = 0; i < stack0.length; i++) {
+//       var chr0 = stack0[j];
+//       if (chr0 = '{') {
+//         curly++;
+//       }
+//       else if (chr0 = '[') {
+//         bracket++;
+//       }
+//       else if (chr0 = '(') {
+//         parens++;
+//       }
+//       else if (curly % 2 !=== 0 || bracket % 2 !=== 0 || parens % 2 !=== 0) {
+//         return false;
+//       }
+//       else {
+//         return true;
+//       }
+//     }
+//     // if (pairs[chr] === '{' || '[' || '(') {
+//     //   return false;
+//     // }
+//   return stack.length === 0;
+//
+//   /* END SOLUTION */
+// };
 
 /* START SOLUTION */
 // For a sufficiently advanced class, being able to pass in a rules object
@@ -112,6 +133,5 @@ var advancedSolution = function(input, rules) {
 
   return stack.length === 0;
 };
-=======
->>>>>>> 2c066c5623ea7cba0e55fd011410552b31ab304a
+
 /* END SOLUTION */
