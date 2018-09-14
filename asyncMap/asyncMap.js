@@ -41,5 +41,9 @@
 
 var asyncMap = function(tasks, callback) {
   /* START SOLUTION */
+  // run callback on async functions
+  // run callback on aysnc functions' results in chronological border
+  // run callback on results
+  // return result
   /* END SOLUTION */
 };
