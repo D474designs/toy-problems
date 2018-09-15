@@ -16,6 +16,11 @@
 var longestRun = function (string) {
   // TODO: Your code here!
   /* START SOLUTION */
+  // iterate through string
+    // if char exists create key in object with a property of 1 for char
+    // and index value for key name
+      // if char already is assigned a key then increment prop value
+  // return key, and prop as an array
   /* END SOLUTION */
 };
 

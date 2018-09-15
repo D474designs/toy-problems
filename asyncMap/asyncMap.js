@@ -39,11 +39,28 @@
  */
 
 
+// var asyncMap = function(tasks, callback) {
+//   /* START SOLUTION */
+//   // run callback on async functions
+//   // run callback on aysnc functions' results in chronological border
+//   // run callback on results
+//   // return result
+//   /* END SOLUTION */
+// };
+
 var asyncMap = function(tasks, callback) {
-  /* START SOLUTION */
-  // run callback on async functions
-  // run callback on aysnc functions' results in chronological border
-  // run callback on results
-  // return result
-  /* END SOLUTION */
+ /* START SOLUTION */
+ var resultsArray = [];
+ var resultsCount = 0;  for (var i = 0; i < tasks.length; i++) {
+   (function (i) {
+     tasks[i](function (val) {
+       resultsArray[i] = val;
+       resultsCount++;
+       if (resultsCount === tasks.length) {
+         callback(resultsArray);
+       }
+     });
+   })(i);
+ }
+ /* END SOLUTION */
 };
