@@ -95,12 +95,44 @@
  *
  */
 
-/* START SOLUTION */
-// Merge two sorted arrays in sorted order
-/* END SOLUTION */
+// /* START SOLUTION */
+// // Merge two sorted arrays in sorted order
+// /* END SOLUTION */
+//
+// var mergeSort = function(array) {
+//   // Your code here.
+//   /* START SOLUTION */
+//   /* END SOLUTION */
+// };
 
 var mergeSort = function(array) {
-  // Your code here.
-  /* START SOLUTION */
-  /* END SOLUTION */
-};
+
+  // If the input array has a length of 1
+  if (array.length === 1) {
+    // Return the input array
+    return array;
+  }
+
+  // If the input array has a length of 2
+  if (array.length === 2) {
+    // If the zeroeth indexed item is less than the one indexed items
+    if (array[0] < array[1]) {
+      // Return the input array
+      return array;
+    // Else
+    } else {
+      // Return a new array with the indices switched
+      return [array[1], array[0]];
+    }
+  }
+
+  // Split the input array in half
+  var secondHalf = array.splice(Math.floor(array.length / 2));
+
+  // Perform mergeSort on each half
+  return mergeSort(array).concat(mergeSort(secondHalf));
+
+}
+
+
+console.log(mergeSort([5,2,5,6,7,2,9,1]))
