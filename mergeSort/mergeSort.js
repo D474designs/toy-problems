@@ -105,34 +105,77 @@
 //   /* END SOLUTION */
 // };
 
-var mergeSort = function(array) {
+var merge = function (left, right) {
+ var merged = [];
+ var iL = 0;
+ var iR = 0;
+ while (merged.length < left.length + right.length) {
+   // Default to the left element for stability
+   if (iR >= right.length || left[iL] <= right[iR]) {
+     merged.push(left[iL]);
+     iL += 1;
+   } else {
+     merged.push(right[iR]);
+     iR += 1;
+   }
+ }
+ return merged;
+};
+/* END SOLUTION */var mergeSort = function(array) {
+ // Your code here.
+ /* START SOLUTION */
+ var lists = [];
+ // Split array into sublists
+ // Natural variant: split array into pre-sorted sublists
+ var currentList = [];
+ lists = [];
+ for (var i = 0; i < array.length; i++) {
+   if (currentList.length && array[i] < currentList[currentList.length - 1]) {
+     lists.push(currentList);
+     currentList = [];
+   }
+   currentList.push(array[i]);
+ }
+ lists.push(currentList);
+ // Until the entire array is sorted
+ while (lists.length > 1) {
+   var newLists = [];
+   // Merge all adjacent lists
+   for (var i = 0; i < Math.floor(lists.length / 2); i++) {
+     newLists.push(merge(lists[i * 2], lists[i * 2 + 1]));
+   }
+   // Include the leftover list if the number is odd
+   if (lists.length % 2) {
+     newLists.push(lists[lists.length - 1]);
+   }
+   lists = newLists;
+ }
+ // we have a single, fully sorted list
+ return lists[0];
+ /* END SOLUTION */
+};
 
-  // If the input array has a length of 1
-  if (array.length === 1) {
-    // Return the input array
-    return array;
-  }
-
-  // If the input array has a length of 2
-  if (array.length === 2) {
-    // If the zeroeth indexed item is less than the one indexed items
-    if (array[0] < array[1]) {
-      // Return the input array
-      return array;
-    // Else
-    } else {
-      // Return a new array with the indices switched
-      return [array[1], array[0]];
-    }
-  }
-
-  // Split the input array in half
-  var secondHalf = array.splice(Math.floor(array.length / 2));
-
-  // Perform mergeSort on each half
-  return mergeSort(array).concat(mergeSort(secondHalf));
-
-}
-
-
-console.log(mergeSort([5,2,5,6,7,2,9,1]))
+// var mergeSort = function(array) {
+//   // If the input array has a length of 1
+//   if (array.length === 1) {
+//     // Return the input array
+//     return array;
+//   }
+//   // If the input array has a length of 2
+//   if (array.length === 2) {
+//     // If the zeroeth indexed item is less than the one indexed items
+//     if (array[0] < array[1]) {
+//       // Return the input array
+//       return array;
+//     // Else
+//     } else {
+//       // Return a new array with the indices switched
+//       return [array[1], array[0]];
+//     }
+//   }
+//   // Split the input array in half
+//   var secondHalf = array.splice(Math.floor(array.length / 2));
+//   // Perform mergeSort on each half
+//   return mergeSort(array).concat(mergeSort(secondHalf));
+// }
+// console.log(mergeSort([5,2,5,6,7,2,9,1]))

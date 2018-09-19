@@ -33,6 +33,9 @@
 
 var shuffleDeck = function(deck) {
   /* START SOLUTION */
+  // use math.random to apply 52 index values
+  // for each value in deck, apply a random number
+  // push deck in order given by replacing random index values with "card"
   /* ELSE
   // Your code here
   END SOLUTION */

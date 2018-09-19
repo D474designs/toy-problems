@@ -13,26 +13,57 @@
  * inputs well.
  */
 
-var longestRun = function (string) {
-  // TODO: Your code here!
-  /* START SOLUTION */
-  // iterate through string
-    // if char exists create key in object with a property of 1 for char
-    // and index value for key name
-      // if char already is assigned a key then increment prop value
-  // return key, and prop as an array
-  /* END SOLUTION */
-};
-
-// If you need a random string generator, use this!
+ var longestRun = function (string) {
+ // TODO: Your code here!
+ /* START SOLUTION */
+ if (!string) { return null; }  var currentCount = 1;
+ var topCount = 0;
+ var currentStart = 0;
+ var topStart = 0;
+ var topEnd = 0;
+ var topRun = string[0];  for (var i = 1; i < string.length; i++) {
+   if (string[i] === string[i - 1]) {
+     currentCount++;
+     if (currentCount > topCount) {
+       topCount = currentCount;
+       topStart = currentStart;
+       topEnd = i;
+     }
+   } else {
+     currentCount = 1;
+     currentStart = i;
+   }
+ }  return [topStart, topEnd];
+ /* END SOLUTION */
+};// If you need a random string generator, use this!
 // (you wont need this function for your solution but it may help with testing)
 var randomString = function (len) {
-  var text = '';
-  var possible = 'abcdefghijklmnopqrstuvwxyz';
-
-  for (var i = 0; i < len; i++) {
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
-  }
-
-  return text;
+ var text = '';
+ var possible = 'abcdefghijklmnopqrstuvwxyz';  for (var i = 0; i < len; i++) {
+   text += possible.charAt(Math.floor(Math.random() * possible.length));
+ }  return text;
 };
+
+// var longestRun = function (string) {
+//   // TODO: Your code here!
+//   /* START SOLUTION */
+//   // iterate through string
+//     // if char exists create key in object with a property of 1 for char
+//     // and index value for key name
+//       // if char already is assigned a key then increment prop value
+//   // return key, and prop as an array
+//   /* END SOLUTION */
+// };
+//
+// // If you need a random string generator, use this!
+// // (you wont need this function for your solution but it may help with testing)
+// var randomString = function (len) {
+//   var text = '';
+//   var possible = 'abcdefghijklmnopqrstuvwxyz';
+//
+//   for (var i = 0; i < len; i++) {
+//     text += possible.charAt(Math.floor(Math.random() * possible.length));
+//   }
+//
+//   return text;
+// };
