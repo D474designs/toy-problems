@@ -46,5 +46,11 @@
 var rotateMatrix = function(matrix/* START SOLUTION */, direction /* END SOLUTION */) {
   // Your code here.
   /* START SOLUTION */
+  // iterate through matrix starting with the last array
+    // push each value to an new array within an array starting from the first index
+  // push the second to last array to the second index of every array in order
+  // push the previous array to the second to last array to the third index value of every array in order
+  // continue until you have pushed all the arrays
+  // return the new array
   /* END SOLUTION */
 };
