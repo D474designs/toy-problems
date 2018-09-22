@@ -32,23 +32,13 @@
 
 var LRUCache = function (limit) {
   /* START SOLUTION */
-  // A map of key -> LRUCacheItem
-  this._items = {};
 
-  // A list of LRUCacheItem.node
-  this._ordering = new List(); // eslint-disable-line
-
-  // Internal bookkeeping
-  this._limit = limit || 10000;
-  this._size = 0;
   /* END SOLUTION */
 };
 
 var LRUCacheItem = function (val, key) {
   /* START SOLUTION */
-  this.val = val === undefined ? null : val;
-  this.key = key === undefined ? null : key;
-  this.node = null;
+
   /* END SOLUTION */
 };
 
@@ -60,50 +50,17 @@ LRUCache.prototype.size = function () {
 
 LRUCache.prototype.get = function (key) {
   /* START SOLUTION */
-  if (!(key in this._items)) { return null; }
 
-  var item = this._items[key];
-  this.promote(item);
-  return item.val;
   /* END SOLUTION */
 };
 
 LRUCache.prototype.set = function (key, val) {
   /* START SOLUTION */
-  var item;
-  // Set an existing item
-  if (key in this._items) {
-    item = this._items[key];
-    item.val = val;
-    this.promote(item);
 
-  // Set a new item
-  } else {
-    // Make space if necessary
-    if (this.full()) { this.prune(); }
-    this._size += 1;
-
-    item = new LRUCacheItem(val, key);
-    item.node = this._ordering.unshift(item);
-    this._items[key] = item;
-  }
   /* END SOLUTION */
 };
 
 /* START SOLUTION */
-LRUCache.prototype.full = function () {
-  return this._size >= this._limit;
-};
-
-LRUCache.prototype.prune = function () {
-  var oldest = this._ordering.pop();
-  delete this._items[oldest.key];
-  this._size = Math.max(0, this._size - 1);
-};
-
-LRUCache.prototype.promote = function (item) {
-  this._ordering.moveToFront(item.node);
-};
 /* END SOLUTION */
 
 var List = function () {
@@ -229,4 +186,3 @@ ListNode.prototype.delete = function () {
   if (this.prev) { this.prev.next = this.next; }
   if (this.next) { this.next.prev = this.prev; }
 };
-
