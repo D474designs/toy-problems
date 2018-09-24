@@ -8,6 +8,7 @@ var random1to5 = function() {
   // NOTE: You're allowed to use `Math.random()` in your solution.
   // TODO: you're code here!
   /* START SOLUTION */
+  return math.floor((math.random() * 5));
   /* END SOLUTION */
 };
 
@@ -16,5 +17,7 @@ var random1to7 = function() {
   // NOTE: Don't use `Math.random()` directly.
   // TODO:  your code here!
   /* START SOLUTION */
+  array7 = [1,2,3,4,5,6,7];
+  return array7[math.floor((math.random()*7))];
   /* END SOLUTION */
 };
