@@ -12,34 +12,64 @@
  *
  */
 
+// var toFraction = function(number) {
+//   // Your code here
+//   /* START SOLUTION */
+//
+//   // if number less than 1
+//     //
+//   // if number more than 1
+//     //
+//
+//   // number.toString();
+//
+//   function highestCommonFactor(a,b) {
+//     if (b==0) return a;
+//       return highestCommonFactor(b,a%b);
+//   }
+//
+//   var decimal = number;
+//   var decimalArray = decimal.split(".");
+//   var leftDecimalPart = decimalArray[0];
+//   var rightDecimalPart = decimalArray[1];
+//
+//   var numerator = leftDecimalPart + rightDecimalPart
+//   var denominator = Math.pow(10,rightDecimalPart.length);
+//   var factor = highestCommonFactor(numerator, denominator);
+//   denominator /= factor;
+//   numerator /= factor;
+//
+//   // document.getElementById("divSolution").innerText = numerator + "/" + denominator;
+//   return numerator + "/" + denominator;
+//   /* END SOLUTION */
+// };
+
 var toFraction = function(number) {
-  // Your code here
-  /* START SOLUTION */
-
-  // if number less than 1
-    //
-  // if number more than 1
-    //
-
-  // number.toString();
-
-  function highestCommonFactor(a,b) {
-    if (b==0) return a;
-      return highestCommonFactor(b,a%b);
-  }
-
-  var decimal = number;
-  var decimalArray = decimal.split(".");
-  var leftDecimalPart = decimalArray[0];
-  var rightDecimalPart = decimalArray[1];
-
-  var numerator = leftDecimalPart + rightDecimalPart
-  var denominator = Math.pow(10,rightDecimalPart.length);
-  var factor = highestCommonFactor(numerator, denominator);
-  denominator /= factor;
-  numerator /= factor;
-
-  // document.getElementById("divSolution").innerText = numerator + "/" + denominator;
-  return numerator + "/" + denominator;
-  /* END SOLUTION */
+ // Your code here
+ /* START SOLUTION */
+ var reduce = function(numerator, denominator) {
+   var lowNum = Math.min(numerator, denominator);
+   for (var i = lowNum; i > 0; i--) {
+     if ( i > numerator || i > denominator) {
+       return [numerator, denominator];
+     }
+     if ( numerator % i === 0 && denominator % i === 0 ) {
+       numerator /= i;
+       denominator /= i;
+     }
+   }
+   return [numerator, denominator];
+ };  var isNegative = number < 0;
+ var string = number.toString();
+ var split = string.split('.');
+ if (isNegative) { number = number * -1; }
+ var denominator;
+ if (split[1]) {
+   denominator = Math.pow(10, split[1].length);
+ } else {
+   denominator = 1;
+ }
+ var numerator = Math.round(number * denominator);
+ return (isNegative ? '-' : '') + reduce(numerator, denominator).join('/');
+ /* END SOLUTION */
 };

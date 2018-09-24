@@ -30,6 +30,10 @@
  * You will need a doubly-linked list (provided).
  */
 
+
+// create a counter to keep track of item usage
+// remove items based on usage
+
 var LRUCache = function (limit) {
   /* START SOLUTION */
 

@@ -31,28 +31,61 @@
  *   See https://www.dartmouth.edu/~chance/teaching_aids/books_articles/Mann.pdf .
  */
 
-var shuffleDeck = function(deck) {
-  /* START SOLUTION */
-  // use math.random to apply 52 index values
-  // for each value in deck, apply a random number
-  // push deck in order given by replacing random index values with "card"
-  /* ELSE
-  // Your code here
-  END SOLUTION */
-};
+// var shuffleDeck = function(deck) {
+//   /* START SOLUTION */
+//   // use math.random to apply 52 index values
+//   // for each value in deck, apply a random number
+//   // push deck in order given by replacing random index values with "card"
+//   /* ELSE
+//   // Your code here
+//   END SOLUTION */
+// };
+//
+// // Ordered deck generator provided for your testing convenience
+// // (You may alter this function, but an unaltered copy will be used for tests.)
+// var orderedDeck = function() {
+//   var suits = [ '♥', '♣', '♠', '♦' ];
+//   var values = [ 'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K' ];
+//   var deck = [];
+//
+//   suits.forEach(function(suit) {
+//     values.forEach(function(value) {
+//       deck.push(value + suit);
+//     });
+//   });
+//
+//   return deck;
+// };
 
-// Ordered deck generator provided for your testing convenience
+var shuffleDeck = function(deck) {
+ /* START SOLUTION */
+ // Constant space (in-place) solution
+ var swap = function (a, b) {
+   var temp = deck[a];
+   deck[a] = deck[b];
+   deck[b] = temp;
+ };
+ // we shuffle into the front of the array
+ // i is the first index of the un-shuffled portion
+ for (var i = 0; i < deck.length; i++) {
+   // select a random card from the un-shuffled portion
+   var pick = i + Math.floor(Math.random() * (deck.length - i));
+   // swap that card with the first un-shuffled card
+   swap(i, pick);
+   // since the pick is selected randomly each time, the swap is not biasing
+ }
+ return deck;
+ /* ELSE
+ // Your code here
+ END SOLUTION */
+};// Ordered deck generator provided for your testing convenience
 // (You may alter this function, but an unaltered copy will be used for tests.)
 var orderedDeck = function() {
-  var suits = [ '♥', '♣', '♠', '♦' ];
-  var values = [ 'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K' ];
-  var deck = [];
-
-  suits.forEach(function(suit) {
-    values.forEach(function(value) {
-      deck.push(value + suit);
-    });
-  });
-
-  return deck;
+ var suits = [ ':hearts:', ':clubs:', ':spades:', ':diamonds:' ];
+ var values = [ 'A', 2, 3, 4, 5, 6, 7, 8, 9, 10, 'J', 'Q', 'K' ];
+ var deck = [];  suits.forEach(function(suit) {
+   values.forEach(function(value) {
+     deck.push(value + suit);
+   });
+ });  return deck;
 };

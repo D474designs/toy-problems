@@ -43,14 +43,36 @@
  *  - Make your function accept a parameter for the direction of rotation (1 = clockwise, -1 = counterclockwise)
  */
 
+// var rotateMatrix = function(matrix/* START SOLUTION */, direction /* END SOLUTION */) {
+//   // Your code here.
+//   /* START SOLUTION */
+//   // iterate through matrix starting with the last array
+//     // push each value to an new array within an array starting from the first index
+//   // push the second to last array to the second index of every array in order
+//   // push the previous array to the second to last array to the third index value of every array in order
+//   // continue until you have pushed all the arrays
+//   // return the new array
+//   /* END SOLUTION */
+// };
+
 var rotateMatrix = function(matrix/* START SOLUTION */, direction /* END SOLUTION */) {
-  // Your code here.
-  /* START SOLUTION */
-  // iterate through matrix starting with the last array
-    // push each value to an new array within an array starting from the first index
-  // push the second to last array to the second index of every array in order
-  // push the previous array to the second to last array to the third index value of every array in order
-  // continue until you have pushed all the arrays
-  // return the new array
-  /* END SOLUTION */
+ // Your code here.
+ /* START SOLUTION */
+ direction = direction || 1;
+ var m = matrix.length;
+ var n = (matrix[0] && matrix[0].length);
+ var output = [];
+ // We iterate with i,j in output order to transparently support rectangular arrays
+ for (var i = 0; i < n; i++) {
+   output[i] = [];
+   for (var j = 0; j < m; j++) {
+     if (direction > 0) { // rotate clockwise
+       output[i][j] = matrix[m - j - 1][i];
+     } else if (direction < 0) { // rotate counterclockwise
+       output[i][j] = matrix[j][n - i - 1];
+     }
+   }
+ }
+ return output;
+ /* END SOLUTION */
 };
