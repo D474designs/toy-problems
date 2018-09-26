@@ -8,5 +8,9 @@
 
 var longestPalindrome = function (string) {
  /* START SOLUTION */
+ // create loop for string going backward
+  // if values coincide with string index value going forward
+  // push to new array index value until end of palindrome
+// return longest string in new array
  /* END SOLUTION */
 };
