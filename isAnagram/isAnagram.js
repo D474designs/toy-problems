@@ -21,10 +21,19 @@
 String.prototype.isAnagram = function(string) {
   // TODO: Your code here!
   /* START SOLUTION */
-
+  // remove spaces and punctuation
+  // split string into characters and push to an array
+   // sort array
+    // compare array values
+      // if arrays are equal return true, else return false
   /* END SOLUTION */
 };
 
 /* START SOLUTION */
-
+  // add helper function to verify enumerable props
+  // Object.defineProperty( isAnagram, {
+  //   enumerable: false,
+  //   writable: false,
+  //   configurable: false
+  // });
 /* END SOLUTION */
