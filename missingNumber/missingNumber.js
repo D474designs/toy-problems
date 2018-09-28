@@ -10,6 +10,19 @@ var findMissingNumber = function(array) {
   // Your code here
 
 /* START SOLUTION */
+  // add up 1000 + (1000 - n) where n starts at 1 and increments to 999
+    // add the testArray together
+      // subtract the result from your first value
+        // return the resulting number
+  var a = [5], count = 5;
+  var missing = new Array();
+
+  for(var i=1;i<=count;i++) {
+    if(a.indexOf(i) == -1){
+      missing.push(i);
+    }
+  }
+  console.log(missing); // to check the result.
 /* END SOLUTION */
 };
 
