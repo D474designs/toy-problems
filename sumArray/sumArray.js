@@ -11,6 +11,11 @@
 
 var sumArray = function(array) {
   /* START SOLUTION */
+  // if array length is less than two return array index 0 value
+  // iterate through the array
+    // if sequence of numbers is +1 or -1 then sum them until false
+      // push sum to new array
+    //return largest sum within array
 
   /* END SOLUTION */
 };
