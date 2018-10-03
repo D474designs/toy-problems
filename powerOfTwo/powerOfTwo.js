@@ -17,6 +17,16 @@ var isPowerOfTwo = function(n) {
 /*  if( typeof n !== 'number' || n % 1 !== 0 || n < 2){
     return false;
   };*/
-  
+
+  // intake input number and compare it against multiples of two
+    // when input equals a multiple of two return true
+      // if input does not equal a multiple of two
+      // and multiples of two are greater than input
+      // return false
+
+  // use recursion
+
+  // &
+
   /* END SOLUTION */
 };
