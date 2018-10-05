@@ -19,21 +19,38 @@
 // Extra extra credit: Write a function that detects Pig Latin and converts
 // it back to English.
 
-
 var convertToPigLatin = function(string) {
-  // Convert the string to an array so it's easier to work with. Split on
-  // whitespace.
-
-  // split string and push to an array
-
-  // if string begins with a vowel sound
-    // ad ay to the end of the string
-  // if string begins with a consonant
-    // take the first letter of the word and add it along with ay to the end
-
-  // return string(s)
+ // Convert the string to an array so it's easier to work with. Split on
+ // whitespace.
+ string = string.split(/\s/);  var consonants = /^[b-df-hj-np-tv-z]/;
+ var vowels = /^[aeiou]/;
+ var punctuation = /.*[.,;:')?!]$/;  for (var i = 0; i < string.length; i++) {
+   var cur = string[i];    // If the current word starts with a consonant or a vowel, Pig Latinize
+   // it. If it starts with a number or punctuation, bail out.
+   if (consonants.test(cur)) {
+     punctuation.test(cur) ? string[i] = cur.slice(1, cur.length - 2) + cur[0] + 'ay' + cur[cur.length - 1]
+                           : string[i] = cur.slice(1) + cur[0] + 'ay';
+   } else if (vowels.test(cur)) {
+     punctuation.test(cur) ? string[i] = cur.slice(0, cur.length - 2) + 'ay' + cur[cur.length - 1]
+                           : string[i] = cur + 'ay';
+   }
+ }  return string.join(' ');
 };
 
-  // extra credit:
-  // if string begins with a vowel sound remove ay and add to beginning
-  // if third to last char is a consonant remove ay and add it to the beginning
+// var convertToPigLatin = function(string) {
+//   // Convert the string to an array so it's easier to work with. Split on
+//   // whitespace.
+//
+//   // split string and push to an array
+//
+//   // if string begins with a vowel sound
+//     // ad ay to the end of the string
+//   // if string begins with a consonant
+//     // take the first letter of the word and add it along with ay to the end
+//
+//   // return string(s)
+// };
+//
+//   // extra credit:
+//   // if string begins with a vowel sound remove ay and add to beginning
+//   // if third to last char is a consonant remove ay and add it to the beginning

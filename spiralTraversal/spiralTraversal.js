@@ -18,6 +18,17 @@ var spiralTraversal = function(matrix) {
 
   // TODO: Implement me!
   /* START SOLUTION */
-  
+  // iterate through array at index 0
+    // push to new array
+  // if array is not array.length value
+    // push array[array].length value to new array
+  // if array in array equals array[array].length
+    // push array in array values in reverse index order
+  // iterate through array of arrays backwards
+    // if array of arrays is not first index value
+      // push first value to new array
+  // use counter variable for first, and last array counts
+  // and use other counter variable for first and last index counts
+
   /* END SOLUTION */
 };
