@@ -41,22 +41,30 @@
 
 var Range = function(start, end, step) {
   /* START SOLUTION */
+  // use recursion to return values
+    // start at start input value
+      // use step to increment return value
+        // stop at end value input
   /* END SOLUTION */
 };
 
 Range.prototype.size = function () {
   /* START SOLUTION */
+  // use array.length to find size of array
   /* END SOLUTION */
 };
 
 Range.prototype.each = function (callback) {
   /* START SOLUTION */
+  // iterate through array
+    // apply callback if callback input given
   /* END SOLUTION */
 };
 
 Range.prototype.includes = function (val) {
   /* START SOLUTION */
-
+    // iterate through array
+      // check iteration value against val input and return if equal values
   /* END SOLUTION */
 };
 
