@@ -16,6 +16,10 @@
 var commonFactors = function(num1, num2) {
   // TODO: Your code here!
   /* START SOLUTION */
-  
+  // use the modulos to find integers that equate to 0
+    // push to an array for each input
+  // use the modulos to find integers that equate to 0
+    // push to an array for each input
+  // compare arrays and return common factors
   /* END SOLUTION */
 };
