@@ -14,21 +14,47 @@
     returns [1, 2, 3, 6, 9, 8, 7, 4, 5]
  */
 
-var spiralTraversal = function(matrix) {
+// var spiralTraversal = function(matrix) {
+//
+//   // TODO: Implement me!
+//   /* START SOLUTION */
+//   // iterate through array at index 0
+//     // push to new array
+//   // if array is not array.length value
+//     // push array[array].length value to new array
+//   // if array in array equals array[array].length
+//     // push array in array values in reverse index order
+//   // iterate through array of arrays backwards
+//     // if array of arrays is not first index value
+//       // push first value to new array
+//   // use counter variable for first, and last array counts
+//   // and use other counter variable for first and last index counts
+//
+//   /* END SOLUTION */
+// };
 
-  // TODO: Implement me!
-  /* START SOLUTION */
-  // iterate through array at index 0
-    // push to new array
-  // if array is not array.length value
-    // push array[array].length value to new array
-  // if array in array equals array[array].length
-    // push array in array values in reverse index order
-  // iterate through array of arrays backwards
-    // if array of arrays is not first index value
-      // push first value to new array
-  // use counter variable for first, and last array counts
-  // and use other counter variable for first and last index counts
-
-  /* END SOLUTION */
+var spiralTraversal = function(matrix) {  // TODO: Implement me!
+ /* START SOLUTION */
+ var results = [];
+ var startRowIndex = 0;
+ var endRowIndex = matrix.length - 1;
+ var startColIndex = 0;
+ var endColIndex = matrix[0].length - 1;  while (startRowIndex <= endRowIndex && startColIndex <= endColIndex) {    for (var i = startColIndex; i <= endColIndex; i++) {
+     results.push(matrix[startRowIndex][i]);
+   }
+   startRowIndex++;    for (var j = startRowIndex; j <= endRowIndex; j++) {
+     results.push(matrix[j][endColIndex]);
+   }
+   endColIndex--;    if (startRowIndex <= endRowIndex) {
+     for (var k = endColIndex; k >= startColIndex; k--) {
+       results.push(matrix[endRowIndex][k]);
+     }
+     endRowIndex--;
+   }    if (startColIndex <= endColIndex) {
+     for (var m = endRowIndex; m >= startRowIndex; m--) {
+       results.push(matrix[m][startColIndex]);
+     }
+     startColIndex++;
+   }  }  return results;
+ /* END SOLUTION */
 };

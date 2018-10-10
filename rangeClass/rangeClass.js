@@ -39,33 +39,69 @@
  */
 
 
+// var Range = function(start, end, step) {
+//   /* START SOLUTION */
+//   // use recursion to return values
+//     // start at start input value
+//       // use step to increment return value
+//         // stop at end value input
+//   /* END SOLUTION */
+// };
+//
+// Range.prototype.size = function () {
+//   /* START SOLUTION */
+//   // use array.length to find size of array
+//   /* END SOLUTION */
+// };
+//
+// Range.prototype.each = function (callback) {
+//   /* START SOLUTION */
+//   // iterate through array
+//     // apply callback if callback input given
+//   /* END SOLUTION */
+// };
+//
+// Range.prototype.includes = function (val) {
+//   /* START SOLUTION */
+//     // iterate through array
+//       // check iteration value against val input and return if equal values
+//   /* END SOLUTION */
+// };
+//
+// var range = new Range(1);
+
 var Range = function(start, end, step) {
-  /* START SOLUTION */
-  // use recursion to return values
-    // start at start input value
-      // use step to increment return value
-        // stop at end value input
-  /* END SOLUTION */
+ /* START SOLUTION */
+ if (start === undefined) {
+   return null;
+ }  this.start = start;  if (end === undefined) {
+   this.end = this.start;
+ } else {
+   this.end = end;
+ }  if (step === undefined) {
+   this.step = (this.start < this.end) ? 1 : -1;
+ } else {
+   this.step = step;
+ }  return this;
+ /* END SOLUTION */
+};Range.prototype.size = function () {
+ /* START SOLUTION */
+ return Math.floor((this.end - this.start) / this.step) + 1;
+ /* END SOLUTION */
+};Range.prototype.each = function (callback) {
+ /* START SOLUTION */
+ if (this.step > 0) {
+   for (var i = this.start; i <= this.end; i += this.step) {
+     callback(i);
+   }
+ } else {
+   for (var i = this.start; i >= this.end; i += this.step) {
+     callback(i);
+   }
+ }
+ /* END SOLUTION */
+};Range.prototype.includes = function (val) {
+ /* START SOLUTION */
+ var isMultipleOfStep = ((this.start - val) % this.step) === 0;  return this.start < this.end ?  ( (val >= this.start) && (val <= this.end) ) && isMultipleOfStep :  ( (val <= this.start) && (val >= this.end) ) && isMultipleOfStep;
+ /* END SOLUTION */
 };
-
-Range.prototype.size = function () {
-  /* START SOLUTION */
-  // use array.length to find size of array
-  /* END SOLUTION */
-};
-
-Range.prototype.each = function (callback) {
-  /* START SOLUTION */
-  // iterate through array
-    // apply callback if callback input given
-  /* END SOLUTION */
-};
-
-Range.prototype.includes = function (val) {
-  /* START SOLUTION */
-    // iterate through array
-      // check iteration value against val input and return if equal values
-  /* END SOLUTION */
-};
-
-var range = new Range(1);

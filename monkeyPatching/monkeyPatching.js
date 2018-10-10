@@ -12,5 +12,17 @@
 // TODO: Your code here!
 
 /* START SOLUTION */
-
+//size
+// iterate through oject keys or use objectKeys(obj).length
+  // return length of array
+//shuffle
+// use splice with Math.random and Math.floor to splice values
+  // insert them using arr.insert randomly in a similar fashion
+    // return modified array or new array
+//runTwice
+// run function
+  // pass in argument(s)
+    // run function again
+      // pass in argument(s) again
+  // return function seperately or together
 /* END SOLUTION */
