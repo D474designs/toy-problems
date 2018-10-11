@@ -24,6 +24,10 @@
 Array.prototype.isSubsetOf = function (arr) {
   // your code here
   /* START SOLUTION */
-
+  // iterate through array
+    // iterate through array and compare initial iteration to current iteration
+      // slice first occurence of index value and compare it to set array
+        // if index value is not found in set array return false
+          // else return true
   /* END SOLUTION */
 };
