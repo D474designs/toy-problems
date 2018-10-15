@@ -9,5 +9,7 @@
 var firstNonRepeatedCharacter = function(string) {
   // TODO: your solution here
   /* START SOLUTION */
+  // iterate through string
+    // if char not repeated return char
   /* END SOLUTION */
 };
