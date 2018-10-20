@@ -45,9 +45,31 @@
 //   /* END SOLUTION */
 // };
 
+// var compose = function() {
+//  /* START SOLUTION */
+//  var args = Array.prototype.slice.call(arguments);  return function(val) {
+//    return args.reduceRight(function(memo, fn) {
+//      return fn(memo);
+//    }, val);
+//  };
+//  /* END SOLUTION */
+// };
+//
+// var pipe = function() {
+//  /* START SOLUTION */
+//  var args = Array.prototype.slice.call(arguments);  return function(val) {
+//    return args.reduce(function(memo, fn) {
+//      return fn(memo);
+//    }, val);
+//  };
+//  /* END SOLUTION */
+// };
+
 var compose = function() {
  /* START SOLUTION */
- var args = Array.prototype.slice.call(arguments);  return function(val) {
+ var args = Array.prototype.slice.call(arguments);
+
+ return function(val) {
    return args.reduceRight(function(memo, fn) {
      return fn(memo);
    }, val);
@@ -57,7 +79,9 @@ var compose = function() {
 
 var pipe = function() {
  /* START SOLUTION */
- var args = Array.prototype.slice.call(arguments);  return function(val) {
+ var args = Array.prototype.slice.call(arguments);
+
+ return function(val) {
    return args.reduce(function(memo, fn) {
      return fn(memo);
    }, val);

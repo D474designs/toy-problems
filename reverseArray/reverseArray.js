@@ -13,6 +13,16 @@
 
 var reverseArray = function(array) {
   /* START SOLUTION */
-  
+  var reverseArray = function(array){
+    for(let i = array.length-2; i >= 0; i--){
+      array.splice(array.length, 1, array[i]);
+      array.splice(i, 1);
+    }
+    return array;
+  }
+
+var inputArray = [1,2,3,4];
+var result = reverseArray(inputArray);
+console.log(result);
   /* END SOLUTION */
 };
